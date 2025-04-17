@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #10B981;
+  --color-primary-dark: #059669;
+  --color-primary-light: #10B98110;
+  --color-bg: #0f0f0f;
+  --color-surface: #222222;
+  --color-surface-hover: #333333;
+  --color-input-bg: #18191A;
+  --color-border: #333333;
+  --color-text-primary: #E5E7EB;
+  --color-text-secondary: #9CA3AF;
+  --color-text-tertiary: #6B7280;
+}
+
+/* Typography settings */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.5em;
+  color: var(--color-text-primary);
+}
+
+h1 {
+  font-size: 1.875rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.sidebar-item {
+  @apply p-2 rounded-lg flex items-center justify-between cursor-pointer transition-colors text-sm;
+}
+
+.sidebar-item-active {
+  @apply bg-gray-700;
+}
+
+.icon-btn {
+  @apply p-1.5 rounded-full transition-colors;
+}
+
+/* UI element transitions */
+button, a, input, textarea, .sidebar-item, .icon-btn {
+  transition: all 0.2s ease-in-out;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Prose styling for markdown content */
+.prose pre {
+  @apply bg-gray-800 rounded-md p-4 overflow-x-auto;
+}
+
+.prose code {
+  @apply text-gray-200;
+}
+
+.prose p {
+  @apply mb-4;
+}
+
+.prose ul {
+  @apply list-disc pl-5 mb-4;
+}
+
+.prose ol {
+  @apply list-decimal pl-5 mb-4;
+}
+
+.prose h1, .prose h2, .prose h3, .prose h4 {
+  @apply font-semibold my-3;
+}
+
+.prose h1 {
+  @apply text-xl;
+}
+
+.prose h2 {
+  @apply text-lg;
+}
+
+.prose h3 {
+  @apply text-base;
+}
+
+/* Model selector styling */
+.model-selector {
+  position: relative;
+}
+
+/* Message box styling */
+.message-box {
+  @apply text-sm text-gray-200;
+}
+
+.user-bubble {
+  @apply bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-primary-dark)] text-white p-3 rounded-2xl rounded-tr-none shadow-sm;
+}
+
+.ai-bubble {
+  @apply bg-[#222] p-3 rounded-2xl rounded-tl-none shadow-sm border border-gray-700;
+}
